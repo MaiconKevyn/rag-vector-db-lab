@@ -14,7 +14,6 @@ def test_pipeline():
     """
     Testa o pipeline RAG completo
     """
-    
     try:
         # Configurações
         bucket_name = 'source-pdf-qa-aws'
