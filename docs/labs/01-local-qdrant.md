@@ -12,3 +12,9 @@ mkdocs serve
 ```
 
 Ao final, a consulta deve retornar chunks vindos de `qdrant.md`.
+
+Para encerrar o runtime local:
+
+```bash
+docker compose down
+```
