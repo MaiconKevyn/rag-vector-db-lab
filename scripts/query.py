@@ -1,3 +1,5 @@
+from typing import Annotated
+
 import typer
 from rich.console import Console
 from rich.table import Table
@@ -11,8 +13,8 @@ console = Console()
 @app.command()
 def main(
     question: str,
-    store: str = typer.Option("qdrant", "--store"),
-    top_k: int = typer.Option(5, "--top-k"),
+    store: Annotated[str, typer.Option("--store")] = "qdrant",
+    top_k: Annotated[int, typer.Option("--top-k")] = 5,
 ) -> None:
     results = query_documents(store_name=store, question=question, top_k=top_k)
     table = Table(title=f"Results from {store}")

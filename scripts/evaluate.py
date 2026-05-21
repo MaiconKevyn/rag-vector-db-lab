@@ -1,3 +1,5 @@
+from typing import Annotated
+
 import typer
 from rich.console import Console
 from rich.table import Table
@@ -17,8 +19,8 @@ EVAL_SET = [
 
 @app.command()
 def main(
-    store: str = typer.Option("qdrant", "--store"),
-    top_k: int = typer.Option(3, "--top-k"),
+    store: Annotated[str, typer.Option("--store")] = "qdrant",
+    top_k: Annotated[int, typer.Option("--top-k")] = 3,
 ) -> None:
     table = Table(title=f"Evaluation for {store}")
     table.add_column("question")

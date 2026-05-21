@@ -1,4 +1,4 @@
-from rag_lab.evaluation import reciprocal_rank, recall_at_k
+from rag_lab.evaluation import recall_at_k, reciprocal_rank
 
 
 def test_recall_at_k_returns_one_when_expected_id_is_present() -> None:
