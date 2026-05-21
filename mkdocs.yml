@@ -1,0 +1,30 @@
+site_name: RAG Vector DB Lab
+site_description: Hands-on labs for learning and comparing vector databases in RAG systems.
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+exclude_docs: |
+  superpowers/**
+nav:
+  - Inicio: index.md
+  - Conceitos:
+      - Chunking: concepts/chunking.md
+      - Embeddings: concepts/embeddings.md
+      - Avaliacao de retrieval: concepts/retrieval-evaluation.md
+  - Vector Databases:
+      - Comparacao: vector-databases/comparison.md
+      - Qdrant: vector-databases/qdrant.md
+      - Pinecone: vector-databases/pinecone.md
+  - Labs:
+      - Qdrant local: labs/01-local-qdrant.md
+      - Pinecone cloud: labs/02-pinecone-cloud.md
+      - Comparar resultados: labs/03-compare-results.md
