@@ -5,8 +5,8 @@
   "item_count": 20,
   "mean_recall_at_k": 0.975,
   "mean_reciprocal_rank": 0.975,
-  "mean_latency_ms": 175.06311159959296,
-  "p95_latency_ms": 190.40228499216028,
+  "mean_latency_ms": 171.61219425106538,
+  "p95_latency_ms": 184.88529000023846,
   "results": [
     {
       "id": "qdrant-local-runtime",
@@ -21,7 +21,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 251.98163799359463,
+      "latency_ms": 235.07912398781627,
       "difficulty": "easy",
       "topic": "qdrant"
     },
@@ -38,7 +38,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 187.7522660070099,
+      "latency_ms": 180.31681700085755,
       "difficulty": "easy",
       "topic": "qdrant"
     },
@@ -55,7 +55,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 157.46377299365122,
+      "latency_ms": 164.58515299018472,
       "difficulty": "medium",
       "topic": "qdrant"
     },
@@ -72,7 +72,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 178.40576800517738,
+      "latency_ms": 163.88748500321526,
       "difficulty": "medium",
       "topic": "qdrant"
     },
@@ -89,7 +89,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 190.40228499216028,
+      "latency_ms": 163.37804299837444,
       "difficulty": "medium",
       "topic": "qdrant"
     },
@@ -106,7 +106,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 0.5,
-      "latency_ms": 167.5767690030625,
+      "latency_ms": 176.50593000871595,
       "difficulty": "easy",
       "topic": "pinecone"
     },
@@ -123,7 +123,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 171.66304700367618,
+      "latency_ms": 177.52769400249235,
       "difficulty": "medium",
       "topic": "pinecone"
     },
@@ -140,7 +140,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 179.04562299372628,
+      "latency_ms": 180.9874629980186,
       "difficulty": "medium",
       "topic": "pinecone"
     },
@@ -157,7 +157,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 179.4035720085958,
+      "latency_ms": 177.66118700092193,
       "difficulty": "easy",
       "topic": "pinecone"
     },
@@ -174,7 +174,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 180.0932899932377,
+      "latency_ms": 179.65833899506833,
       "difficulty": "medium",
       "topic": "pinecone"
     },
@@ -191,7 +191,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 177.10079898824915,
+      "latency_ms": 160.16229800879955,
       "difficulty": "easy",
       "topic": "rag"
     },
@@ -208,7 +208,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 180.46892699203454,
+      "latency_ms": 156.36702100164257,
       "difficulty": "easy",
       "topic": "rag"
     },
@@ -225,7 +225,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 182.63050499081146,
+      "latency_ms": 153.9709079952445,
       "difficulty": "medium",
       "topic": "rag"
     },
@@ -242,7 +242,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 175.80234399065375,
+      "latency_ms": 164.75563400308602,
       "difficulty": "medium",
       "topic": "rag"
     },
@@ -259,7 +259,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 157.80361701035872,
+      "latency_ms": 153.53702701395378,
       "difficulty": "easy",
       "topic": "bedrock"
     },
@@ -276,7 +276,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 154.08196901262272,
+      "latency_ms": 155.96134900988545,
       "difficulty": "medium",
       "topic": "bedrock"
     },
@@ -294,7 +294,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 158.4376930113649,
+      "latency_ms": 155.11367699946277,
       "difficulty": "hard",
       "topic": "comparison"
     },
@@ -312,7 +312,7 @@
       ],
       "recall_at_k": 0.5,
       "reciprocal_rank": 1.0,
-      "latency_ms": 156.80754899221938,
+      "latency_ms": 184.88529000023846,
       "difficulty": "hard",
       "topic": "comparison"
     },
@@ -330,7 +330,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 158.13700400758535,
+      "latency_ms": 180.84869500307832,
       "difficulty": "hard",
       "topic": "comparison"
     },
@@ -347,7 +347,7 @@
       ],
       "recall_at_k": 1.0,
       "reciprocal_rank": 1.0,
-      "latency_ms": 156.2037940020673,
+      "latency_ms": 167.0547510002507,
       "difficulty": "hard",
       "topic": "comparison"
     }

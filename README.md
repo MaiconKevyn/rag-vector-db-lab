@@ -51,3 +51,8 @@ docker compose up -d qdrant
 python scripts/ingest.py --store qdrant --docs data/sample_docs
 python scripts/benchmark.py --store qdrant --dataset evaluation/datasets/rag_lab_questions.jsonl
 ```
+
+## Resultados
+
+- Relatorio mais recente: `experiments/reports/latest.md`
+- Resultado bruto: `experiments/results/latest.json`
