@@ -25,6 +25,9 @@ dev = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+markers = [
+  "integration: tests that require external services such as Qdrant",
+]
 
 [tool.ruff]
 line-length = 100

@@ -8,6 +8,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      qdrant:
+        image: qdrant/qdrant:v1.12.4
+        ports:
+          - 6333:6333
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -21,5 +26,10 @@ jobs:
         run: ruff check .
       - name: Tests
         run: pytest -q
+      - name: Qdrant integration
+        env:
+          RAG_LAB_RUN_QDRANT_INTEGRATION: "1"
+          RAG_LAB_QDRANT_URL: http://localhost:6333
+        run: pytest tests/test_qdrant_integration.py -q
       - name: Docs build
         run: mkdocs build --strict
