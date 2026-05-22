@@ -1,5 +1,7 @@
 # RAG Vector DB Lab
 
+[![CI](https://github.com/MaiconKevyn/rag-vector-db-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/MaiconKevyn/rag-vector-db-lab/actions/workflows/ci.yml)
+
 Laboratorio pratico para aprender RAG comparando vector databases como Qdrant e Pinecone.
 
 ## Pipeline overview
@@ -7,6 +9,13 @@ Laboratorio pratico para aprender RAG comparando vector databases como Qdrant e 
 <p align="center">
   <img src="docs/assets/rag-pipeline-overview.svg" alt="Scientific overview of the RAG Vector DB Lab ingestion, query, and evaluation pipeline" width="100%">
 </p>
+
+## O que este lab prova
+
+- Comparacao justa exige manter corpus, chunking, embeddings e metricas constantes.
+- Qdrant permite validar o pipeline inteiro localmente antes de envolver cloud.
+- Pinecone permite comparar a mesma interface contra uma opcao gerenciada.
+- O valor do projeto esta no controle experimental: trocar o vector store sem trocar o pipeline.
 
 ## Inicio rapido
 
