@@ -43,3 +43,11 @@ ruff check .
 pytest -q
 mkdocs build --strict
 ```
+
+## Benchmark reproduzivel
+
+```bash
+docker compose up -d qdrant
+python scripts/ingest.py --store qdrant --docs data/sample_docs
+python scripts/benchmark.py --store qdrant --dataset evaluation/datasets/rag_lab_questions.jsonl
+```

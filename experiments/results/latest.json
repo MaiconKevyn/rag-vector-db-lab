@@ -1,0 +1,355 @@
+{
+  "store": "qdrant",
+  "top_k": 3,
+  "dataset_path": "evaluation/datasets/rag_lab_questions.jsonl",
+  "item_count": 20,
+  "mean_recall_at_k": 0.975,
+  "mean_reciprocal_rank": 0.975,
+  "mean_latency_ms": 175.06311159959296,
+  "p95_latency_ms": 190.40228499216028,
+  "results": [
+    {
+      "id": "qdrant-local-runtime",
+      "question": "qual vector database roda localmente com docker compose?",
+      "expected_ids": [
+        "qdrant"
+      ],
+      "retrieved_ids": [
+        "qdrant",
+        "aws-bedrock",
+        "pinecone"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 251.98163799359463,
+      "difficulty": "easy",
+      "topic": "qdrant"
+    },
+    {
+      "id": "qdrant-collections",
+      "question": "onde o qdrant organiza vetores e metadados?",
+      "expected_ids": [
+        "qdrant"
+      ],
+      "retrieved_ids": [
+        "qdrant",
+        "aws-bedrock",
+        "pinecone"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 187.7522660070099,
+      "difficulty": "easy",
+      "topic": "qdrant"
+    },
+    {
+      "id": "qdrant-hnsw",
+      "question": "qual tecnologia de indexacao o qdrant usa para busca vetorial aproximada?",
+      "expected_ids": [
+        "qdrant"
+      ],
+      "retrieved_ids": [
+        "qdrant",
+        "pinecone",
+        "aws-bedrock"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 157.46377299365122,
+      "difficulty": "medium",
+      "topic": "qdrant"
+    },
+    {
+      "id": "qdrant-payload-filter",
+      "question": "qual recurso do qdrant permite filtrar por source ou document_id?",
+      "expected_ids": [
+        "qdrant"
+      ],
+      "retrieved_ids": [
+        "qdrant",
+        "rag-basics",
+        "aws-bedrock"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 178.40576800517738,
+      "difficulty": "medium",
+      "topic": "qdrant"
+    },
+    {
+      "id": "qdrant-best-fit",
+      "question": "quando qdrant e uma boa escolha para um time de rag?",
+      "expected_ids": [
+        "qdrant"
+      ],
+      "retrieved_ids": [
+        "qdrant",
+        "rag-basics",
+        "aws-bedrock"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 190.40228499216028,
+      "difficulty": "medium",
+      "topic": "qdrant"
+    },
+    {
+      "id": "pinecone-managed",
+      "question": "qual vector database cloud gerenciado aparece no laboratorio?",
+      "expected_ids": [
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "qdrant",
+        "pinecone",
+        "aws-bedrock"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.5,
+      "latency_ms": 167.5767690030625,
+      "difficulty": "easy",
+      "topic": "pinecone"
+    },
+    {
+      "id": "pinecone-serverless",
+      "question": "qual recurso do pinecone evita gerenciar servidores de busca vetorial?",
+      "expected_ids": [
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "pinecone",
+        "qdrant",
+        "rag-basics"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 171.66304700367618,
+      "difficulty": "medium",
+      "topic": "pinecone"
+    },
+    {
+      "id": "pinecone-namespaces",
+      "question": "qual conceito do pinecone separa conjuntos de vetores dentro do mesmo index?",
+      "expected_ids": [
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "pinecone",
+        "rag-basics",
+        "qdrant"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 179.04562299372628,
+      "difficulty": "medium",
+      "topic": "pinecone"
+    },
+    {
+      "id": "pinecone-api-key",
+      "question": "qual configuracao e obrigatoria para usar pinecone no laboratorio?",
+      "expected_ids": [
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "pinecone",
+        "qdrant",
+        "aws-bedrock"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 179.4035720085958,
+      "difficulty": "easy",
+      "topic": "pinecone"
+    },
+    {
+      "id": "pinecone-best-fit",
+      "question": "quando pinecone e uma boa escolha para prototipos cloud?",
+      "expected_ids": [
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "pinecone",
+        "aws-bedrock",
+        "qdrant"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 180.0932899932377,
+      "difficulty": "medium",
+      "topic": "pinecone"
+    },
+    {
+      "id": "rag-definition",
+      "question": "o que significa retrieval augmented generation?",
+      "expected_ids": [
+        "rag-basics"
+      ],
+      "retrieved_ids": [
+        "rag-basics",
+        "aws-bedrock",
+        "qdrant"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 177.10079898824915,
+      "difficulty": "easy",
+      "topic": "rag"
+    },
+    {
+      "id": "rag-retriever",
+      "question": "qual parte do rag encontra chunks relevantes antes da geracao?",
+      "expected_ids": [
+        "rag-basics"
+      ],
+      "retrieved_ids": [
+        "rag-basics",
+        "aws-bedrock",
+        "pinecone"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 180.46892699203454,
+      "difficulty": "easy",
+      "topic": "rag"
+    },
+    {
+      "id": "rag-failure-modes",
+      "question": "quais falhas podem acontecer em um pipeline rag?",
+      "expected_ids": [
+        "rag-basics"
+      ],
+      "retrieved_ids": [
+        "rag-basics",
+        "aws-bedrock",
+        "pinecone"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 182.63050499081146,
+      "difficulty": "medium",
+      "topic": "rag"
+    },
+    {
+      "id": "rag-grounding",
+      "question": "como o rag ajuda a fundamentar respostas em contexto recuperado?",
+      "expected_ids": [
+        "rag-basics"
+      ],
+      "retrieved_ids": [
+        "rag-basics",
+        "aws-bedrock",
+        "pinecone"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 175.80234399065375,
+      "difficulty": "medium",
+      "topic": "rag"
+    },
+    {
+      "id": "bedrock-role",
+      "question": "qual papel o aws bedrock pode cumprir em um sistema rag?",
+      "expected_ids": [
+        "aws-bedrock"
+      ],
+      "retrieved_ids": [
+        "aws-bedrock",
+        "rag-basics",
+        "qdrant"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 157.80361701035872,
+      "difficulty": "easy",
+      "topic": "bedrock"
+    },
+    {
+      "id": "bedrock-not-vector-db",
+      "question": "por que bedrock nao substitui qdrant ou pinecone como vector database?",
+      "expected_ids": [
+        "aws-bedrock"
+      ],
+      "retrieved_ids": [
+        "aws-bedrock",
+        "qdrant",
+        "pinecone"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 154.08196901262272,
+      "difficulty": "medium",
+      "topic": "bedrock"
+    },
+    {
+      "id": "compare-local-cloud",
+      "question": "compare qdrant local com pinecone cloud para operacao de rag",
+      "expected_ids": [
+        "qdrant",
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "pinecone",
+        "qdrant",
+        "aws-bedrock"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 158.4376930113649,
+      "difficulty": "hard",
+      "topic": "comparison"
+    },
+    {
+      "id": "compare-metadata-filter",
+      "question": "quais stores no laboratorio suportam filtros por metadados?",
+      "expected_ids": [
+        "qdrant",
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "qdrant",
+        "rag-basics",
+        "aws-bedrock"
+      ],
+      "recall_at_k": 0.5,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 156.80754899221938,
+      "difficulty": "hard",
+      "topic": "comparison"
+    },
+    {
+      "id": "compare-operational-risk",
+      "question": "qual e o risco operacional principal de qdrant self-hosted versus pinecone?",
+      "expected_ids": [
+        "qdrant",
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "pinecone",
+        "qdrant",
+        "aws-bedrock"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 158.13700400758535,
+      "difficulty": "hard",
+      "topic": "comparison"
+    },
+    {
+      "id": "compare-provider-dependency",
+      "question": "qual opcao aumenta dependencia de provedor cloud gerenciado?",
+      "expected_ids": [
+        "pinecone"
+      ],
+      "retrieved_ids": [
+        "pinecone",
+        "aws-bedrock",
+        "qdrant"
+      ],
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 156.2037940020673,
+      "difficulty": "hard",
+      "topic": "comparison"
+    }
+  ]
+}
