@@ -3,7 +3,7 @@ from uuid import NAMESPACE_URL, uuid5
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
 
-from rag_lab.vectorstores.base import SearchResult, VectorRecord
+from rag_lab.vectorstores.base import SearchResult, VectorRecord, ensure_vector_dimensions
 
 
 class QdrantVectorStore:
@@ -20,6 +20,18 @@ class QdrantVectorStore:
             self.client.create_collection(
                 collection_name=collection,
                 vectors_config=VectorParams(size=dimensions, distance=Distance.COSINE),
+            )
+        else:
+            collection_info = self.client.get_collection(collection_name=collection)
+            vector_config = collection_info.config.params.vectors
+            if isinstance(vector_config, dict):
+                vector_size = next(iter(vector_config.values())).size
+            else:
+                vector_size = vector_config.size
+            ensure_vector_dimensions(
+                expected=dimensions,
+                actual=vector_size,
+                store_name="qdrant",
             )
 
     def upsert(self, records: list[VectorRecord]) -> None:

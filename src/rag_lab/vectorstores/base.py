@@ -24,3 +24,14 @@ class VectorStore(Protocol):
 
     def search(self, vector: list[float], top_k: int = 5) -> list[SearchResult]:
         raise NotImplementedError
+
+
+class VectorStoreError(RuntimeError):
+    pass
+
+
+def ensure_vector_dimensions(expected: int, actual: int, store_name: str) -> None:
+    if expected != actual:
+        raise VectorStoreError(
+            f"{store_name} vector dimension mismatch: expected {expected}, got {actual}"
+        )

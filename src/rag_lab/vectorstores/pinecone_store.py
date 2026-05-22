@@ -2,7 +2,7 @@ from time import sleep
 
 from pinecone import Pinecone, ServerlessSpec
 
-from rag_lab.vectorstores.base import SearchResult, VectorRecord
+from rag_lab.vectorstores.base import SearchResult, VectorRecord, VectorStoreError
 
 
 class PineconeVectorStore:
@@ -24,7 +24,11 @@ class PineconeVectorStore:
                 metric="cosine",
                 spec=ServerlessSpec(cloud=cloud, region=region),
             )
+            attempts = 0
             while not self.pc.describe_index(index_name).status["ready"]:
+                attempts += 1
+                if attempts > 60:
+                    raise VectorStoreError(f"Pinecone index did not become ready: {index_name}")
                 sleep(1)
         self.index = self.pc.Index(index_name)
 
