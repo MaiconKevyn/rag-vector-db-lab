@@ -1,0 +1,20 @@
+{"id":"qdrant-local-runtime","question":"qual vector database roda localmente com docker compose?","expected_ids":["qdrant"],"difficulty":"easy","topic":"qdrant"}
+{"id":"qdrant-collections","question":"onde o qdrant organiza vetores e metadados?","expected_ids":["qdrant"],"difficulty":"easy","topic":"qdrant"}
+{"id":"qdrant-hnsw","question":"qual tecnologia de indexacao o qdrant usa para busca vetorial aproximada?","expected_ids":["qdrant"],"difficulty":"medium","topic":"qdrant"}
+{"id":"qdrant-payload-filter","question":"qual recurso do qdrant permite filtrar por source ou document_id?","expected_ids":["qdrant"],"difficulty":"medium","topic":"qdrant"}
+{"id":"qdrant-best-fit","question":"quando qdrant e uma boa escolha para um time de rag?","expected_ids":["qdrant"],"difficulty":"medium","topic":"qdrant"}
+{"id":"pinecone-managed","question":"qual vector database cloud gerenciado aparece no laboratorio?","expected_ids":["pinecone"],"difficulty":"easy","topic":"pinecone"}
+{"id":"pinecone-serverless","question":"qual recurso do pinecone evita gerenciar servidores de busca vetorial?","expected_ids":["pinecone"],"difficulty":"medium","topic":"pinecone"}
+{"id":"pinecone-namespaces","question":"qual conceito do pinecone separa conjuntos de vetores dentro do mesmo index?","expected_ids":["pinecone"],"difficulty":"medium","topic":"pinecone"}
+{"id":"pinecone-api-key","question":"qual configuracao e obrigatoria para usar pinecone no laboratorio?","expected_ids":["pinecone"],"difficulty":"easy","topic":"pinecone"}
+{"id":"pinecone-best-fit","question":"quando pinecone e uma boa escolha para prototipos cloud?","expected_ids":["pinecone"],"difficulty":"medium","topic":"pinecone"}
+{"id":"rag-definition","question":"o que significa retrieval augmented generation?","expected_ids":["rag-basics"],"difficulty":"easy","topic":"rag"}
+{"id":"rag-retriever","question":"qual parte do rag encontra chunks relevantes antes da geracao?","expected_ids":["rag-basics"],"difficulty":"easy","topic":"rag"}
+{"id":"rag-failure-modes","question":"quais falhas podem acontecer em um pipeline rag?","expected_ids":["rag-basics"],"difficulty":"medium","topic":"rag"}
+{"id":"rag-grounding","question":"como o rag ajuda a fundamentar respostas em contexto recuperado?","expected_ids":["rag-basics"],"difficulty":"medium","topic":"rag"}
+{"id":"bedrock-role","question":"qual papel o aws bedrock pode cumprir em um sistema rag?","expected_ids":["aws-bedrock"],"difficulty":"easy","topic":"bedrock"}
+{"id":"bedrock-not-vector-db","question":"por que bedrock nao substitui qdrant ou pinecone como vector database?","expected_ids":["aws-bedrock"],"difficulty":"medium","topic":"bedrock"}
+{"id":"compare-local-cloud","question":"compare qdrant local com pinecone cloud para operacao de rag","expected_ids":["qdrant","pinecone"],"difficulty":"hard","topic":"comparison"}
+{"id":"compare-metadata-filter","question":"quais stores no laboratorio suportam filtros por metadados?","expected_ids":["qdrant","pinecone"],"difficulty":"hard","topic":"comparison"}
+{"id":"compare-operational-risk","question":"qual e o risco operacional principal de qdrant self-hosted versus pinecone?","expected_ids":["qdrant","pinecone"],"difficulty":"hard","topic":"comparison"}
+{"id":"compare-provider-dependency","question":"qual opcao aumenta dependencia de provedor cloud gerenciado?","expected_ids":["pinecone"],"difficulty":"hard","topic":"comparison"}
