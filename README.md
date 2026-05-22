@@ -2,6 +2,12 @@
 
 Laboratorio pratico para aprender RAG comparando vector databases como Qdrant e Pinecone.
 
+## Pipeline overview
+
+<p align="center">
+  <img src="docs/assets/rag-pipeline-overview.svg" alt="Scientific overview of the RAG Vector DB Lab ingestion, query, and evaluation pipeline" width="100%">
+</p>
+
 ## Inicio rapido
 
 ```bash

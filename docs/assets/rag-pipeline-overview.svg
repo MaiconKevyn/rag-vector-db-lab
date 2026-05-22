@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="940" viewBox="0 0 1400 940" role="img" aria-labelledby="title desc">
+  <title id="title">RAG Vector DB Lab pipeline overview</title>
+  <desc id="desc">Scientific infographic showing ingestion, query, and evaluation flows for the RAG Vector DB Lab project.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#334155" />
+    </marker>
+    <marker id="arrow-muted" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#64748b" />
+    </marker>
+    <style>
+      .background { fill: #f8fafc; }
+      .title { fill: #0f172a; font: 700 30px Arial, Helvetica, sans-serif; }
+      .subtitle { fill: #475569; font: 400 15px Arial, Helvetica, sans-serif; }
+      .lane-label { fill: #334155; font: 700 13px Arial, Helvetica, sans-serif; letter-spacing: 1px; }
+      .box-title { fill: #0f172a; font: 700 15px Arial, Helvetica, sans-serif; }
+      .box-text { fill: #334155; font: 400 12px Arial, Helvetica, sans-serif; }
+      .box-note { fill: #475569; font: 400 11px Arial, Helvetica, sans-serif; }
+      .pill-text { fill: #334155; font: 700 11px Arial, Helvetica, sans-serif; letter-spacing: .8px; }
+      .arrow { fill: none; stroke: #334155; stroke-width: 2.2; marker-end: url(#arrow); }
+      .arrow-muted { fill: none; stroke: #64748b; stroke-width: 1.8; stroke-dasharray: 6 6; marker-end: url(#arrow-muted); }
+      .stage-input { fill: #eef2ff; stroke: #4f46e5; }
+      .stage-core { fill: #e0f2fe; stroke: #0284c7; }
+      .stage-embedding { fill: #ecfeff; stroke: #0891b2; }
+      .stage-adapter { fill: #f0fdf4; stroke: #16a34a; }
+      .stage-store { fill: #fff7ed; stroke: #ea580c; }
+      .stage-metric { fill: #fdf2f8; stroke: #db2777; }
+      .stage-output { fill: #f8fafc; stroke: #475569; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; }
+      .panel-header { fill: #e2e8f0; stroke: #cbd5e1; }
+      .shadow { filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.08)); }
+    </style>
+  </defs>
+
+  <rect class="background" x="0" y="0" width="1400" height="940" />
+
+  <text class="title" x="52" y="54">RAG Vector DB Lab: current pipeline overview</text>
+  <text class="subtitle" x="52" y="82">Local-first Python laboratory for ingesting Markdown documents, retrieving context, and comparing Qdrant with Pinecone.</text>
+
+  <g aria-label="Legend">
+    <rect class="stage-input" x="960" y="32" width="90" height="24" rx="8" />
+    <text class="pill-text" x="982" y="49">INPUT</text>
+    <rect class="stage-core" x="1060" y="32" width="90" height="24" rx="8" />
+    <text class="pill-text" x="1084" y="49">CORE</text>
+    <rect class="stage-adapter" x="1160" y="32" width="90" height="24" rx="8" />
+    <text class="pill-text" x="1174" y="49">ADAPTER</text>
+    <rect class="stage-metric" x="1260" y="32" width="90" height="24" rx="8" />
+    <text class="pill-text" x="1278" y="49">METRICS</text>
+  </g>
+
+  <text class="lane-label" x="58" y="132">INGESTION LANE: python scripts/ingest.py --store qdrant --docs data/sample_docs</text>
+
+  <g id="ingestion-flow" class="shadow">
+    <rect id="box-docs" class="stage-input" x="60" y="155" width="170" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="84" y="184">Sample docs</text>
+    <text class="box-text" x="84" y="207">data/sample_docs</text>
+    <text class="box-note" x="84" y="225">Markdown corpus</text>
+
+    <rect id="box-loader" class="stage-core" x="270" y="155" width="170" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="294" y="184">Document loader</text>
+    <text class="box-text" x="294" y="207">documents.py</text>
+    <text class="box-note" x="294" y="225">id + text + source</text>
+
+    <rect id="box-chunking" class="stage-core" x="480" y="155" width="170" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="522" y="184">Chunking</text>
+    <text class="box-text" x="515" y="207">chunk_text()</text>
+    <text class="box-note" x="507" y="225">word windows + overlap</text>
+
+    <rect id="box-embed-docs" class="stage-embedding" x="690" y="155" width="170" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="724" y="184">Embeddings</text>
+    <text class="box-text" x="721" y="207">fastembed BGE</text>
+    <text class="box-note" x="713" y="225">vectors for chunks</text>
+
+    <rect id="box-records" class="stage-core" x="900" y="155" width="170" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="936" y="184">VectorRecord</text>
+    <text class="box-text" x="927" y="207">id, text, vector</text>
+    <text class="box-note" x="925" y="225">metadata payload</text>
+
+    <rect id="box-upsert" class="stage-adapter" x="1110" y="155" width="210" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="1155" y="184">build_store()</text>
+    <text class="box-text" x="1145" y="207">VectorStore.upsert</text>
+    <text class="box-note" x="1134" y="225">selected by --store or .env</text>
+  </g>
+
+  <path id="arrow-docs-loader" class="arrow" d="M 230 198 L 270 198" />
+  <path id="arrow-loader-chunking" class="arrow" d="M 440 198 L 480 198" />
+  <path id="arrow-chunking-embed" class="arrow" d="M 650 198 L 690 198" />
+  <path id="arrow-embed-records" class="arrow" d="M 860 198 L 900 198" />
+  <path id="arrow-records-upsert" class="arrow" d="M 1070 198 L 1110 198" />
+
+  <g id="settings-panel" class="shadow">
+    <rect class="panel" x="60" y="315" width="325" height="122" rx="8" stroke-width="1.5" />
+    <rect class="panel-header" x="60" y="315" width="325" height="32" rx="8" />
+    <text class="box-title" x="82" y="337">Configuration boundary</text>
+    <text class="box-text" x="82" y="369">Settings reads RAG_LAB_* from .env</text>
+    <text class="box-text" x="82" y="391">CLI option --store overrides store choice</text>
+    <text class="box-note" x="82" y="415">No provider secret is hardcoded in code or docs</text>
+  </g>
+  <path id="arrow-settings-upsert" class="arrow-muted" d="M 385 376 C 570 376, 895 282, 1110 238" />
+
+  <g id="store-panel" class="shadow">
+    <rect class="panel" x="1030" y="300" width="290" height="255" rx="8" stroke-width="1.5" />
+    <rect class="panel-header" x="1030" y="300" width="290" height="34" rx="8" />
+    <text class="box-title" x="1062" y="323">Vector store implementations</text>
+
+    <rect id="box-qdrant" class="stage-store" x="1060" y="350" width="230" height="50" rx="8" stroke-width="1.6" />
+    <text class="box-title" x="1086" y="372">QdrantVectorStore</text>
+    <text class="box-note" x="1086" y="390">local Docker or Qdrant cloud</text>
+
+    <rect id="box-pinecone" class="stage-store" x="1060" y="423" width="230" height="50" rx="8" stroke-width="1.6" />
+    <text class="box-title" x="1083" y="445">PineconeVectorStore</text>
+    <text class="box-note" x="1086" y="463">managed serverless index</text>
+
+    <rect id="box-memory" class="stage-store" x="1060" y="496" width="230" height="40" rx="8" stroke-width="1.6" />
+    <text class="box-title" x="1089" y="520">InMemoryVectorStore</text>
+  </g>
+  <path id="arrow-upsert-store" class="arrow" d="M 1215 241 L 1215 300" />
+
+  <text class="lane-label" x="58" y="592">QUERY LANE: python scripts/query.py --store qdrant "quando usar qdrant?"</text>
+
+  <g id="query-flow" class="shadow">
+    <rect id="box-question" class="stage-input" x="60" y="630" width="180" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="103" y="659">Question</text>
+    <text class="box-text" x="89" y="682">natural language</text>
+    <text class="box-note" x="91" y="700">single query string</text>
+
+    <rect id="box-embed-query" class="stage-embedding" x="285" y="630" width="180" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="329" y="659">Embed query</text>
+    <text class="box-text" x="327" y="682">same model</text>
+    <text class="box-note" x="323" y="700">one query vector</text>
+
+    <rect id="box-search" class="stage-adapter" x="510" y="630" width="200" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="557" y="659">search()</text>
+    <text class="box-text" x="551" y="682">VectorStore API</text>
+    <text class="box-note" x="548" y="700">top_k nearest chunks</text>
+
+    <rect id="box-results" class="stage-output" x="755" y="630" width="220" height="86" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="811" y="659">SearchResult</text>
+    <text class="box-text" x="787" y="682">score + source + text</text>
+    <text class="box-note" x="793" y="700">Rich table in terminal</text>
+  </g>
+
+  <path id="arrow-question-embed" class="arrow" d="M 240 673 L 285 673" />
+  <path id="arrow-embed-search" class="arrow" d="M 465 673 L 510 673" />
+  <path id="arrow-search-results" class="arrow" d="M 710 673 L 755 673" />
+  <path id="arrow-store-search" class="arrow-muted" d="M 1175 555 L 1175 596 L 610 596 L 610 630" />
+
+  <text class="lane-label" x="58" y="762">EVALUATION LANE: python scripts/evaluate.py --store qdrant</text>
+
+  <g id="evaluation-flow" class="shadow">
+    <rect id="box-eval-set" class="stage-input" x="60" y="790" width="180" height="78" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="103" y="818">Eval set</text>
+    <text class="box-text" x="101" y="839">questions</text>
+    <text class="box-text" x="92" y="856">expected ids</text>
+
+    <rect id="box-eval-loop" class="stage-core" x="285" y="790" width="180" height="78" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="321" y="818">Query loop</text>
+    <text class="box-text" x="322" y="841">query_documents()</text>
+
+    <rect id="box-retrieved" class="stage-output" x="510" y="790" width="180" height="78" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="553" y="818">Retrieved ids</text>
+    <text class="box-text" x="548" y="841">document_id ranking</text>
+
+    <rect id="box-metrics" class="stage-metric" x="735" y="790" width="200" height="78" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="779" y="818">Metrics table</text>
+    <text class="box-text" x="780" y="841">recall@k + MRR</text>
+  </g>
+
+  <path id="arrow-eval-loop" class="arrow" d="M 240 829 L 285 829" />
+  <path id="arrow-loop-retrieved" class="arrow" d="M 465 829 L 510 829" />
+  <path id="arrow-retrieved-metrics" class="arrow" d="M 690 829 L 735 829" />
+
+  <g id="docs-output" class="shadow">
+    <rect class="stage-output" x="1015" y="790" width="305" height="78" rx="8" stroke-width="1.8" />
+    <text class="box-title" x="1062" y="818">Documentation surface</text>
+    <text class="box-text" x="1054" y="841">README + MkDocs labs explain</text>
+    <text class="box-text" x="1054" y="858">how to run each lane</text>
+  </g>
+
+  <path id="arrow-metrics-docs" class="arrow-muted" d="M 935 829 L 1015 829" />
+</svg>
