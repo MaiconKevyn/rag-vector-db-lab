@@ -55,7 +55,14 @@ def test_run_benchmark_computes_mean_metrics(tmp_path: Path) -> None:
         assert store == "in-memory"
         assert top_k == 2
         if "qdrant" in question:
-            return [SearchResult(id="qdrant:0", text="", score=1.0, metadata={"document_id": "qdrant"})]
+            return [
+                SearchResult(
+                    id="qdrant:0",
+                    text="",
+                    score=1.0,
+                    metadata={"document_id": "qdrant"},
+                )
+            ]
         return [SearchResult(id="wrong:0", text="", score=1.0, metadata={"document_id": "wrong"})]
 
     run = run_benchmark("in-memory", dataset, top_k=2, query_fn=fake_query)

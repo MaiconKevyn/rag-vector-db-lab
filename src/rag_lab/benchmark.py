@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Callable
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from time import perf_counter
-from typing import Callable
 
 from rag_lab.evaluation import recall_at_k, reciprocal_rank
 from rag_lab.vectorstores.base import SearchResult

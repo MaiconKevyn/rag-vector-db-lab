@@ -7,7 +7,10 @@ def render_markdown_report(run: BenchmarkRun) -> str:
     lines = [
         "# RAG Vector DB Lab Benchmark Report",
         "",
-        "This report is generated from a reproducible benchmark run using the same corpus, chunking strategy, embedding model, and retrieval metrics.",
+        (
+            "This report is generated from a reproducible benchmark run using the same "
+            "corpus, chunking strategy, embedding model, and retrieval metrics."
+        ),
         "",
         "## Summary",
         "",
@@ -15,7 +18,8 @@ def render_markdown_report(run: BenchmarkRun) -> str:
         "| --- | ---: | ---: | ---: | ---: | ---: |",
         (
             f"| {run.store} | {run.item_count} | {run.mean_recall_at_k:.3f} | "
-            f"{run.mean_reciprocal_rank:.3f} | {run.mean_latency_ms:.1f} | {run.p95_latency_ms:.1f} |"
+            f"{run.mean_reciprocal_rank:.3f} | {run.mean_latency_ms:.1f} | "
+            f"{run.p95_latency_ms:.1f} |"
         ),
         "",
         "## Per-question Results",

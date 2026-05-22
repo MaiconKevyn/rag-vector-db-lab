@@ -30,5 +30,8 @@ def test_render_markdown_report_contains_summary_table() -> None:
     markdown = render_markdown_report(run)
 
     assert "# RAG Vector DB Lab Benchmark Report" in markdown
-    assert "| Store | Items | Mean recall@k | Mean MRR | Mean latency ms | P95 latency ms |" in markdown
+    expected_header = (
+        "| Store | Items | Mean recall@k | Mean MRR | Mean latency ms | P95 latency ms |"
+    )
+    assert expected_header in markdown
     assert "| qdrant | 1 | 1.000 | 1.000 | 12.5 | 12.5 |" in markdown
