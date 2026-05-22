@@ -65,3 +65,7 @@ python scripts/benchmark.py --store qdrant --dataset evaluation/datasets/rag_lab
 
 - Relatorio mais recente: `experiments/reports/latest.md`
 - Resultado bruto: `experiments/results/latest.json`
+
+## Material de divulgacao
+
+- Draft para LinkedIn: `docs/linkedin-post.md`
